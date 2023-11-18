@@ -26,9 +26,7 @@ const getNSFWTags = async () => {
   }
 };
 
-
-if (msg.content === "get tags") {
-  var NSFWTags = await getNSFWTags();
-  msg.reply(NSFWTags.nsfw.join(" "));
-  return;
-}
+module.exports = {
+  getNSFW,
+  getNSFWTags,
+};
