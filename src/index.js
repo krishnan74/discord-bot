@@ -80,6 +80,8 @@ const getNFTs = async (accountAddress, chain) => {
     const imageUrls = await Promise.all(
       data.nfts.map((nft) => getPNGContentFromURL(nft.image_url))
     );
+
+    console.log(imageUrls);
     return imageUrls;
     //const svgContent = await getPNGContentFromURL(data.nfts.image_url);
   } catch (error) {
@@ -144,5 +146,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
   }
 });
+
+
 
 client.login(process.env.DISCORD_BOT_TOKEN);
